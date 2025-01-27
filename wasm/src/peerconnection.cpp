@@ -311,8 +311,8 @@ std::ostream &operator<<(std::ostream &out, rtc::PeerConnection::State state) {
 	return out << str;
 }
 
-std::ostream &operator<<(std::ostream &out, PeerConnection::IceState state) {
-	using IceState = PeerConnection::IceState;
+std::ostream &operator<<(std::ostream &out, rtc::PeerConnection::IceState state) {
+	using IceState = rtc::PeerConnection::IceState;
 	const char *str;
 	switch (state) {
 	case IceState::New:
