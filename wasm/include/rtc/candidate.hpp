@@ -31,7 +31,7 @@ namespace rtc {
 
 class Candidate {
 public:
-	Candidate(const string &candidate, const string &mid);
+	Candidate(const string &candidate, const string &mid = "0");
 	string candidate() const;
 	string mid() const;
 	operator string() const;
