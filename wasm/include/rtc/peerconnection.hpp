@@ -81,6 +81,8 @@ public:
 	SignalingState signalingState() const;
 	optional<Description> localDescription() const;
 	optional<Description> remoteDescription() const;
+	optional<string> localAddress() const { return std::nullopt; }
+	optional<string> remoteAddress() const { return std::nullopt; }
 
 	shared_ptr<DataChannel> createDataChannel(const string &label, DataChannelInit init = {});
 
