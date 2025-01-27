@@ -42,6 +42,9 @@ public:
 	bool isOpen() const override;
 	bool isClosed() const override;
 
+	optional<string> remoteAddress() const { return std::nullopt; }
+	optional<string> path() const { return std::nullopt; }
+
 private:
 	void triggerOpen() override;
 
