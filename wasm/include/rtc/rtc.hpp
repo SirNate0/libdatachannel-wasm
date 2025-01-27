@@ -35,6 +35,19 @@ namespace rtc {
 inline void Preload() {}
 inline void Cleanup() {}
 
+// Dummy logging
+enum class LogLevel { // Don't change, it must match plog severity
+	None = 0,
+	Fatal = 1,
+	Error = 2,
+	Warning = 3,
+	Info = 4,
+	Debug = 5,
+	Verbose = 6
+};
+typedef std::function<void(LogLevel level, string message)> LogCallback;
+inline void InitLogger(LogLevel level, LogCallback callback = nullptr) {}
+
 } // namespace rtc
 
 #endif // RTC_H
