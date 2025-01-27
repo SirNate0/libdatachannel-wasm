@@ -130,4 +130,9 @@ private:
 
 } // namespace rtc
 
+std::ostream &operator<<(std::ostream &out, rtc::PeerConnection::State state);
+std::ostream &operator<<(std::ostream &out, rtc::PeerConnection::IceState state);
+std::ostream &operator<<(std::ostream &out, rtc::PeerConnection::GatheringState state);
+std::ostream &operator<<(std::ostream &out, rtc::PeerConnection::SignalingState state);
+
 #endif // RTC_PEERCONNECTION_H
