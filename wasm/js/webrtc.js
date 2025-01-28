@@ -208,6 +208,13 @@
 			}
 		},
 
+		rtcClosePeerConnection: function(pc) {
+			var peerConnection = WEBRTC.peerConnectionsMap[pc];
+			if(peerConnection) {
+				peerConnection.close();
+			}
+		},
+
 		rtcGetLocalDescription: function(pc) {
 			if(!pc) return 0;
 			var peerConnection = WEBRTC.peerConnectionsMap[pc];

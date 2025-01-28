@@ -32,6 +32,7 @@ extern "C" {
 extern int rtcCreatePeerConnection(const char **pUrls, const char **pUsernames,
                                    const char **pPasswords, int nIceServers);
 extern void rtcDeletePeerConnection(int pc);
+extern void rtcClosePeerConnection(int pc);
 extern char *rtcGetLocalDescription(int pc);
 extern char *rtcGetLocalDescriptionType(int pc);
 extern char *rtcGetRemoteDescription(int pc);
@@ -155,6 +156,8 @@ PeerConnection::PeerConnection(const Configuration &config) {
 }
 
 PeerConnection::~PeerConnection() { rtcDeletePeerConnection(mId); }
+
+void PeerConnection::close() { rtcClosePeerConnection(mId); }
 
 PeerConnection::State PeerConnection::state() const { return mState; }
 
