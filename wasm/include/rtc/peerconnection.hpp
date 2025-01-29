@@ -99,6 +99,16 @@ public:
 	void onGatheringStateChange(std::function<void(GatheringState state)> callback);
 	void onSignalingStateChange(std::function<void(SignalingState state)> callback);
 
+	void resetCallbacks() {
+		mDataChannelCallback = nullptr;
+		mLocalDescriptionCallback = nullptr;
+		mLocalCandidateCallback = nullptr;
+		mStateChangeCallback = nullptr;
+		mIceStateChangeCallback = nullptr;
+		mGatheringStateChangeCallback = nullptr;
+		mSignalingStateChangeCallback = nullptr;
+	}
+
 protected:
 	void triggerDataChannel(shared_ptr<DataChannel> dataChannel);
 	void triggerLocalDescription(const Description &description);
